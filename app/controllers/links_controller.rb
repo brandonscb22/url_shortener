@@ -26,6 +26,7 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = Link.new
+
   end
 
   # GET /links/1/edit
