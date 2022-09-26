@@ -1,0 +1,37 @@
+<tr>
+  <td><%= link.id %></td>
+  <td><%= link.title %></td>
+  <td><%= link.description %></td>
+  <td><%= link.visits %></td>
+  <td>
+    <h3 >
+      <span class="badge text-bg-success"><%= link.alexa_rank %></span>
+    </h3>
+  </td>
+  <td>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUrl<%= link.id %>" aria-expanded="false" aria-controls="collapseUrl<%= link.id %>">
+      <i class="bi bi-eye"></i>
+    </button>
+    <div class="collapse mt-2" id="collapseUrl<%= link.id %>">
+      <div class="card card-body text-break text-lowercase">
+        <%= link.url %>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="d-inline-flex">
+      <button class="btn btn-primary me-1" onclick="copyBoard('<%= @base_url + "/"  + link.short_code %>')">
+        <i class="bi bi-link"></i>
+      </button>
+      <%= link_to link, class: "btn btn-primary me-1" do %>
+        <i class="bi bi-eye"></i>
+      <%  end %>
+      <%= link_to edit_link_path(link), class: "btn btn-primary me-1" do %>
+        <i class="bi bi-pencil"></i>
+      <%  end %>
+      <%= button_to link, class: "btn btn-primary me-1", method: :delete do %>
+        <i class="bi bi-trash"></i>
+      <%  end %>
+    </div>
+  </td>
+</tr>

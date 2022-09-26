@@ -1,0 +1,34 @@
+<%= form_with(model: link) do |form| %>
+  <% if link.present? and link.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+        <% link.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :url %>
+    <%= form.text_field :url, class: "form-control" %>
+  </div>
+
+  <div class="row">
+    <div class="col text-end mt-3">
+      <%= form.submit class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>New link</h1>
+<div class="card mb-2">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <%= render "form", link: @link %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Back to links", links_path, class: "btn btn-primary btn-sm" %>
+</div>

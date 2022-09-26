@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+<div class="card mb-2">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <%= render @link %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3 class="mt-3">History</h3>
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Ip</th>
+              <th scope="col">Browser</th>
+              <th scope="col">Platform</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @link_histories.each do |link| %>
+              <%= render 'link_history_row', link:link %>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,33 @@
+<div id="<%= dom_id link %>">
+  <p>
+    <strong>Title:</strong>
+    <%= link.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= link.description %>
+  </p>
+
+  <p>
+    <strong>Url:</strong>
+    <%= link.url %>
+  </p>
+
+  <p>
+    <strong>Alexa rank:</strong>
+    <%= link.alexa_rank %>
+  </p>
+  <div class="d-inline-flex">
+    <button class="btn btn-primary me-1" onclick="copyBoard('<%= @base_url + "/"  + link.short_code %>')">
+      <i class="bi bi-link"></i>
+    </button>
+    <%= link_to edit_link_path(link), class: "btn btn-primary me-1" do %>
+      <i class="bi bi-pencil"></i>
+    <%  end %>
+    <%= button_to link, class: "btn btn-primary me-1", method: :delete do %>
+      <i class="bi bi-trash"></i>
+    <%  end %>
+  </div>
+
+</div>

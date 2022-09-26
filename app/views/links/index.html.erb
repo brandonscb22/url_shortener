@@ -1,0 +1,43 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Links</h1>
+
+<div class="card mb-5">
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Description</th>
+              <th scope="col">Visits</th>
+              <th scope="col">Alexa Rank</th>
+              <th scope="col">Url</th>
+              <th scope="col">Options</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @links.each do |link| %>
+              <%= render 'link_row', link:link %>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fixed-bottom">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col text-end">
+        <%= link_to new_link_path,  class: "btn btn-primary mb-3 me-3" do %>
+          New Link
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
